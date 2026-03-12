@@ -589,7 +589,7 @@
 
         /* ====== RESPONSIVE ====== */
         @media (max-width: 1024px) {
-            .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
             .hero-desc { margin-left: auto; margin-right: auto; }
             .hero-actions { justify-content: center; }
             .hero-stats { justify-content: center; }
@@ -597,16 +597,87 @@
             .product-grid { grid-template-columns: repeat(2, 1fr); }
             .features-grid { grid-template-columns: repeat(2, 1fr); }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .contact-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 640px) {
+            section { padding: 60px 16px; }
+            
+            /* Hero mobile */
+            .hero-inner { gap: 24px; text-align: left; padding: 0 16px; }
+            .hero-image { order: -1; }
+            .hero-image img { width: 100%; border-radius: 8px; }
+            .hero h1 { font-size: 32px; }
+            .hero-desc { font-size: 16px; margin-left: 0; margin-right: 0; }
+            .hero-badge { justify-content: flex-start; font-size: 10px; }
+            .hero-actions { 
+                justify-content: flex-start; 
+                flex-direction: column;
+                gap: 12px;
+            }
+            .btn-primary, .btn-secondary {
+                padding: 18px 32px;
+                font-size: 16px;
+                text-align: center;
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-stats { 
+                flex-direction: row; 
+                gap: 24px; 
+                justify-content: flex-start;
+            }
+            .hero-stat-value { font-size: 22px; }
+            .hero-stat-label { font-size: 11px; }
+            
+            /* Products mobile */
             .product-grid { grid-template-columns: 1fr; }
+            .product-card { padding: 28px 24px; }
+            .btn-product { padding: 16px; font-size: 14px; }
+            
+            /* Features mobile */
             .features-grid { grid-template-columns: 1fr; }
-            .hero-stats { flex-direction: column; gap: 20px; align-items: center; }
+            .feature-card { padding: 28px 24px; }
+            
+            /* Comparison table - horizontal scroll */
+            .comp-table { font-size: 12px; display: block; overflow-x: auto; white-space: nowrap; }
+            .comp-table thead th, .comp-table tbody td { padding: 12px 10px; min-width: 80px; }
+            .comp-table tbody td:first-child, .comp-table thead th:first-child { 
+                position: sticky; 
+                left: 0; 
+                background: var(--cream); 
+                z-index: 1;
+                min-width: 120px;
+            }
+            .comp-table thead th:first-child { background: var(--olive-dark); }
+            
+            /* Contact mobile - big tap targets */
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-card { 
+                padding: 24px 20px; 
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                text-align: left;
+            }
+            .contact-icon { font-size: 28px; margin-bottom: 0; flex-shrink: 0; }
+            .contact-value { font-size: 17px; }
+            .contact-value a { 
+                display: inline-block;
+                padding: 4px 0;
+            }
+            
+            /* About mobile */
+            .about-facts { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .about-fact { padding: 20px 16px; }
+            .about-fact-value { font-size: 24px; }
+            
+            /* Section titles mobile */
+            .section-title { font-size: 28px; }
+            .section-desc { font-size: 15px; }
+            
+            /* Nav mobile */
             .nav-links { gap: 16px; }
-            .nav-links a { font-size: 12px; }
-            .comp-table { font-size: 12px; }
-            .comp-table thead th, .comp-table tbody td { padding: 10px 8px; }
+            .nav-links a { font-size: 14px; }
         }
 
         /* ====== ANIMATIONS ====== */
