@@ -818,11 +818,12 @@
                 <div class="product-card">
                     <div class="product-name">Atlas</div>
                     <div class="product-model">Control</div>
-                    <div class="product-imu">ICM-42688 + ICM-20689 ×2</div>
+                    <div class="product-imu">ICM-42688-P × 2 + BMI088</div>
                     <div class="product-price">$300 <span>USD</span></div>
                     <ul class="product-specs">
                         <li><span>MCU</span><strong>STM32H743</strong></li>
                         <li><span data-ua="Клас IMU" data-en="IMU class">Клас IMU</span><strong data-ua="Базовий" data-en="Entry">Базовий</strong></li>
+                        <li><span data-ua="Доп. IMU" data-en="Sec. IMU">Доп. IMU</span><strong>ICM-42688-P + BMI088</strong></li>
                         <li><span data-ua="Магнітометр" data-en="Magnetometer">Магнітометр</span><strong>RM3100</strong></li>
                         <li><span data-ua="Барометр" data-en="Barometer">Барометр</span><strong>MS5611 ×2</strong></li>
                         <li><span data-ua="Шифрування" data-en="Encryption">Шифрування</span><strong class="check">✓</strong></li>
@@ -840,6 +841,7 @@
                     <ul class="product-specs">
                         <li><span>MCU</span><strong>STM32H753</strong></li>
                         <li><span data-ua="Клас IMU" data-en="IMU class">Клас IMU</span><strong>Industrial</strong></li>
+                        <li><span data-ua="Доп. IMU" data-en="Sec. IMU">Доп. IMU</span><strong>ICM-42688-P + BMI088</strong></li>
                         <li><span data-ua="Магнітометр" data-en="Magnetometer">Магнітометр</span><strong>RM3100</strong></li>
                         <li><span data-ua="Барометр" data-en="Barometer">Барометр</span><strong>MS5611 ×2</strong></li>
                         <li><span data-ua="Шифрування" data-en="Encryption">Шифрування</span><strong class="check">✓</strong></li>
@@ -858,6 +860,7 @@
                     <ul class="product-specs">
                         <li><span>MCU</span><strong>STM32H753</strong></li>
                         <li><span data-ua="Клас IMU" data-en="IMU class">Клас IMU</span><strong>Professional</strong></li>
+                        <li><span data-ua="Доп. IMU" data-en="Sec. IMU">Доп. IMU</span><strong>ICM-42688-P + BMI088</strong></li>
                         <li><span data-ua="Магнітометр" data-en="Magnetometer">Магнітометр</span><strong>RM3100</strong></li>
                         <li><span data-ua="Барометр" data-en="Barometer">Барометр</span><strong>MS5611 ×2</strong></li>
                         <li><span data-ua="Шифрування" data-en="Encryption">Шифрування</span><strong class="check">✓</strong></li>
@@ -875,6 +878,7 @@
                     <ul class="product-specs">
                         <li><span>MCU</span><strong>STM32H753</strong></li>
                         <li><span data-ua="Клас IMU" data-en="IMU class">Клас IMU</span><strong>Tactical</strong></li>
+                        <li><span data-ua="Доп. IMU" data-en="Sec. IMU">Доп. IMU</span><strong>ICM-42688-P + BMI088</strong></li>
                         <li><span data-ua="Магнітометр" data-en="Magnetometer">Магнітометр</span><strong>RM3100</strong></li>
                         <li><span data-ua="Барометр" data-en="Barometer">Барометр</span><strong>MS5611 ×2</strong></li>
                         <li><span data-ua="Шифрування" data-en="Encryption">Шифрування</span><strong class="check">✓</strong></li>
@@ -913,6 +917,16 @@
                     <tr>
                         <td data-ua="Основний IMU" data-en="Primary IMU">Основний IMU</td>
                         <td>ICM-42688-P</td><td>Murata SCH16T</td><td>ADIS16470</td><td>ADIS16477</td>
+                    </tr>
+                    <tr>
+                        <td data-ua="Додаткові IMU ×2" data-en="Secondary IMU ×2">Додаткові IMU ×2</td>
+                        <td colspan="4" style="text-align:left; padding-left:16px;">
+                            <span style="font-family:var(--mono); font-size:12px;">
+                                ICM-42688-P <span style="color:var(--text-light)" data-ua="(high-rate, для спідронів)" data-en="(high-rate, for racers)">(high-rate, для спідронів)</span>
+                                &nbsp;+&nbsp;
+                                BMI088 <span style="color:var(--text-light)" data-ua="(вібростійкий)" data-en="(vibration-resistant)">(вібростійкий)</span>
+                            </span>
+                        </td>
                     </tr>
                     <tr>
                         <td data-ua="Клас IMU" data-en="IMU grade">Клас IMU</td>
@@ -1030,7 +1044,28 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2024–2026 Atlas Control · <a href="https://altasflight.github.io/atlas-docs/" data-ua="Документація" data-en="Docs">Документація</a> · <span data-ua="Розроблено в Україні" data-en="Made in Ukraine">Розроблено в Україні</span> 🇺🇦</p>
+        <p>© 2024–2026 Atlas Control · <a href="https://altasflight.github.io/atlas-docs/" data-ua="Документація" data-en="Docs">Документація</a> · <span data-ua="Розроблено в Україні" data-en="Made in Ukraine">Розроблено в Україні</span></p>
     </footer>
 
-    <!-- LANG SWITCH -->
+    <script>
+        let currentLang = 'ua';
+
+        function toggleLang() {
+            currentLang = currentLang === 'ua' ? 'en' : 'ua';
+            const btn = document.querySelector('.lang-switch');
+            btn.textContent = currentLang === 'ua' ? 'EN' : 'UA';
+
+            document.querySelectorAll('[data-ua]').forEach(el => {
+                const text = currentLang === 'ua' ? el.getAttribute('data-ua') : el.getAttribute('data-en');
+                if (text) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = text;
+                    } else {
+                        el.innerHTML = text;
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
