@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+а <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlas Control — Flight Controllers</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1d16'/%3E%3Cpolygon points='16,6 26,24 6,24' fill='none' stroke='%23c4d94e' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
     <meta name="description" content="Atlas Control — Ukrainian-made flight controllers for professional UAV systems. ArduPilot compatible, industrial-grade IMU options.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -376,6 +375,10 @@
             letter-spacing: 1px;
             text-transform: uppercase;
         }
+        .product-badge-dev {
+            background: #c97b30;
+            color: #fff;
+        }
         .product-name {
             font-family: var(--mono);
             font-size: 13px;
@@ -534,7 +537,7 @@
         .contact .section-desc { color: var(--sand); }
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2px;
             margin-top: 48px;
         }
@@ -590,7 +593,7 @@
 
         /* ====== RESPONSIVE ====== */
         @media (max-width: 1024px) {
-            .hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+            .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .hero-desc { margin-left: auto; margin-right: auto; }
             .hero-actions { justify-content: center; }
             .hero-stats { justify-content: center; }
@@ -598,87 +601,16 @@
             .product-grid { grid-template-columns: repeat(2, 1fr); }
             .features-grid { grid-template-columns: repeat(2, 1fr); }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 640px) {
-            section { padding: 60px 16px; }
-            
-            /* Hero mobile */
-            .hero-inner { gap: 24px; text-align: left; padding: 0 16px; }
-            .hero-image { order: -1; }
-            .hero-image img { width: 100%; border-radius: 8px; }
-            .hero h1 { font-size: 32px; }
-            .hero-desc { font-size: 16px; margin-left: 0; margin-right: 0; }
-            .hero-badge { justify-content: flex-start; font-size: 10px; }
-            .hero-actions { 
-                justify-content: flex-start; 
-                flex-direction: column;
-                gap: 12px;
-            }
-            .btn-primary, .btn-secondary {
-                padding: 18px 32px;
-                font-size: 16px;
-                text-align: center;
-                width: 100%;
-                justify-content: center;
-            }
-            .hero-stats { 
-                flex-direction: row; 
-                gap: 24px; 
-                justify-content: flex-start;
-            }
-            .hero-stat-value { font-size: 22px; }
-            .hero-stat-label { font-size: 11px; }
-            
-            /* Products mobile */
             .product-grid { grid-template-columns: 1fr; }
-            .product-card { padding: 28px 24px; }
-            .btn-product { padding: 16px; font-size: 14px; }
-            
-            /* Features mobile */
             .features-grid { grid-template-columns: 1fr; }
-            .feature-card { padding: 28px 24px; }
-            
-            /* Comparison table - horizontal scroll */
-            .comp-table { font-size: 12px; display: block; overflow-x: auto; white-space: nowrap; }
-            .comp-table thead th, .comp-table tbody td { padding: 12px 10px; min-width: 80px; }
-            .comp-table tbody td:first-child, .comp-table thead th:first-child { 
-                position: sticky; 
-                left: 0; 
-                background: var(--cream); 
-                z-index: 1;
-                min-width: 120px;
-            }
-            .comp-table thead th:first-child { background: var(--olive-dark); }
-            
-            /* Contact mobile - big tap targets */
-            .contact-grid { grid-template-columns: 1fr; }
-            .contact-card { 
-                padding: 24px 20px; 
-                display: flex;
-                align-items: center;
-                gap: 16px;
-                text-align: left;
-            }
-            .contact-icon { font-size: 28px; margin-bottom: 0; flex-shrink: 0; }
-            .contact-value { font-size: 17px; }
-            .contact-value a { 
-                display: inline-block;
-                padding: 4px 0;
-            }
-            
-            /* About mobile */
-            .about-facts { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            .about-fact { padding: 20px 16px; }
-            .about-fact-value { font-size: 24px; }
-            
-            /* Section titles mobile */
-            .section-title { font-size: 28px; }
-            .section-desc { font-size: 15px; }
-            
-            /* Nav mobile */
+            .hero-stats { flex-direction: column; gap: 20px; align-items: center; }
             .nav-links { gap: 16px; }
-            .nav-links a { font-size: 14px; }
+            .nav-links a { font-size: 12px; }
+            .comp-table { font-size: 12px; }
+            .comp-table thead th, .comp-table tbody td { padding: 10px 8px; }
         }
 
         /* ====== ANIMATIONS ====== */
@@ -761,7 +693,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/atlas-in-uav.png" alt="Atlas Control installed in a UAV" style="border-radius: 4px;">
+                <img src="images/atlas-in-uav.png" alt="Atlas Control flight controller in UAV">
             </div>
         </div>
     </section>
@@ -819,12 +751,11 @@
                 <div class="product-card">
                     <div class="product-name">Atlas</div>
                     <div class="product-model">Control</div>
-                    <div class="product-imu">ICM-42688-P × 2 + BMI088</div>
+                    <div class="product-imu">ICM-42688 + ICM-20689 ×2</div>
                     <div class="product-price">$300 <span>USD</span></div>
                     <ul class="product-specs">
                         <li><span>MCU</span><strong>STM32H743</strong></li>
                         <li><span data-ua="Клас IMU" data-en="IMU class">Клас IMU</span><strong data-ua="Базовий" data-en="Entry">Базовий</strong></li>
-                        <li><span data-ua="Доп. IMU" data-en="Sec. IMU">Доп. IMU</span><strong>ICM-42688-P + BMI088</strong></li>
                         <li><span data-ua="Магнітометр" data-en="Magnetometer">Магнітометр</span><strong>RM3100</strong></li>
                         <li><span data-ua="Барометр" data-en="Barometer">Барометр</span><strong>MS5611 ×2</strong></li>
                         <li><span data-ua="Шифрування" data-en="Encryption">Шифрування</span><strong class="check">✓</strong></li>
@@ -835,14 +766,14 @@
 
                 <!-- Atlas Control+ -->
                 <div class="product-card">
+                    <div class="product-badge product-badge-dev" data-ua="В розробці" data-en="To be developed">В розробці</div>
                     <div class="product-name">Atlas</div>
                     <div class="product-model">Control+</div>
-                    <div class="product-imu">Murata SCH16T</div>
-                    <div class="product-price">$400 <span>USD</span></div>
+                    <div class="product-imu">triple Murata SCH16T</div>
+                    <div class="product-price">$500 <span>USD</span></div>
                     <ul class="product-specs">
                         <li><span>MCU</span><strong>STM32H753</strong></li>
                         <li><span data-ua="Клас IMU" data-en="IMU class">Клас IMU</span><strong>Industrial</strong></li>
-                        <li><span data-ua="Доп. IMU" data-en="Sec. IMU">Доп. IMU</span><strong>ICM-42688-P + BMI088</strong></li>
                         <li><span data-ua="Магнітометр" data-en="Magnetometer">Магнітометр</span><strong>RM3100</strong></li>
                         <li><span data-ua="Барометр" data-en="Barometer">Барометр</span><strong>MS5611 ×2</strong></li>
                         <li><span data-ua="Шифрування" data-en="Encryption">Шифрування</span><strong class="check">✓</strong></li>
@@ -861,7 +792,6 @@
                     <ul class="product-specs">
                         <li><span>MCU</span><strong>STM32H753</strong></li>
                         <li><span data-ua="Клас IMU" data-en="IMU class">Клас IMU</span><strong>Professional</strong></li>
-                        <li><span data-ua="Доп. IMU" data-en="Sec. IMU">Доп. IMU</span><strong>ICM-42688-P + BMI088</strong></li>
                         <li><span data-ua="Магнітометр" data-en="Magnetometer">Магнітометр</span><strong>RM3100</strong></li>
                         <li><span data-ua="Барометр" data-en="Barometer">Барометр</span><strong>MS5611 ×2</strong></li>
                         <li><span data-ua="Шифрування" data-en="Encryption">Шифрування</span><strong class="check">✓</strong></li>
@@ -872,14 +802,14 @@
 
                 <!-- Atlas Control Apex -->
                 <div class="product-card">
+                    <div class="product-badge product-badge-dev" data-ua="В розробці" data-en="In development">В розробці</div>
                     <div class="product-name">Atlas</div>
                     <div class="product-model">Control Apex</div>
-                    <div class="product-imu">Analog Devices ADIS16477</div>
+                    <div class="product-imu">Analog Devices ADIS16470 + triple Murata SCH16T</div>
                     <div class="product-price">$1200 <span>USD</span></div>
                     <ul class="product-specs">
                         <li><span>MCU</span><strong>STM32H753</strong></li>
                         <li><span data-ua="Клас IMU" data-en="IMU class">Клас IMU</span><strong>Tactical</strong></li>
-                        <li><span data-ua="Доп. IMU" data-en="Sec. IMU">Доп. IMU</span><strong>ICM-42688-P + BMI088</strong></li>
                         <li><span data-ua="Магнітометр" data-en="Magnetometer">Магнітометр</span><strong>RM3100</strong></li>
                         <li><span data-ua="Барометр" data-en="Barometer">Барометр</span><strong>MS5611 ×2</strong></li>
                         <li><span data-ua="Шифрування" data-en="Encryption">Шифрування</span><strong class="check">✓</strong></li>
@@ -909,7 +839,7 @@
                 <tbody>
                     <tr>
                         <td data-ua="Ціна" data-en="Price">Ціна</td>
-                        <td>$300</td><td>$400</td><td>$800</td><td>$1200</td>
+                        <td>$300</td><td>$500</td><td>$800</td><td>$1200</td>
                     </tr>
                     <tr>
                         <td>MCU</td>
@@ -917,17 +847,7 @@
                     </tr>
                     <tr>
                         <td data-ua="Основний IMU" data-en="Primary IMU">Основний IMU</td>
-                        <td>ICM-42688-P</td><td>Murata SCH16T</td><td>ADIS16470</td><td>ADIS16477</td>
-                    </tr>
-                    <tr>
-                        <td data-ua="Додаткові IMU ×2" data-en="Secondary IMU ×2">Додаткові IMU ×2</td>
-                        <td colspan="4" style="text-align:left; padding-left:16px;">
-                            <span style="font-family:var(--mono); font-size:12px;">
-                                ICM-42688-P <span style="color:var(--text-light)" data-ua="(high-rate, для спідронів)" data-en="(high-rate, for racers)">(high-rate, для спідронів)</span>
-                                &nbsp;+&nbsp;
-                                BMI088 <span style="color:var(--text-light)" data-ua="(вібростійкий)" data-en="(vibration-resistant)">(вібростійкий)</span>
-                            </span>
-                        </td>
+                        <td>ICM-42688-P</td><td>triple Murata SCH16T</td><td>ADIS16470</td><td>ADIS16470 + triple Murata SCH16T</td>
                     </tr>
                     <tr>
                         <td data-ua="Клас IMU" data-en="IMU grade">Клас IMU</td>
@@ -1021,18 +941,13 @@
             <div class="contact-grid">
                 <div class="contact-card">
                     <div class="contact-icon">💬</div>
-                    <div class="contact-label">Signal</div>
-                    <div class="contact-value"><a href="https://signal.me/#u/ai09.04">ai09.04</a></div>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📱</div>
-                    <div class="contact-label">WhatsApp</div>
-                    <div class="contact-value"><a href="https://wa.me/380737117593">+380 73 711 7593</a></div>
+                    <div class="contact-label">Signal / WhatsApp</div>
+                    <div class="contact-value" data-ua="Напишіть для швидкого зв'язку" data-en="Message for quick contact">Напишіть для швидкого зв'язку</div>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">📧</div>
                     <div class="contact-label">Email</div>
-                    <div class="contact-value"><a href="mailto:o.a.ivashyna@gmail.com">o.a.ivashyna@gmail.com</a></div>
+                    <div class="contact-value"><a href="/cdn-cgi/l/email-protection#3f5c50514b5e5c4b7f5e4b535e4c5c50514b4d5053114a5e"><span class="__cf_email__" data-cfemail="ff9c90918b9e9c8bbf9e8b939e8c9c90918b8d9093d18a9e">[email&#160;protected]</span></a></div>
                 </div>
                 <div class="contact-card">
                     <div class="contact-icon">📋</div>
@@ -1045,28 +960,15 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2024–2026 Atlas Control · <a href="https://altasflight.github.io/atlas-docs/" data-ua="Документація" data-en="Docs">Документація</a> · <span data-ua="Розроблено в Україні" data-en="Made in Ukraine">Розроблено в Україні</span></p>
+        <p>© 2024–2026 Atlas Control · <a href="https://altasflight.github.io/atlas-docs/" data-ua="Документація" data-en="Docs">Документація</a> · <span data-ua="Розроблено в Україні" data-en="Made in Ukraine">Розроблено в Україні</span> 🇺🇦</p>
     </footer>
 
-    <script>
+    <!-- LANG SWITCH -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         let currentLang = 'ua';
-
         function toggleLang() {
             currentLang = currentLang === 'ua' ? 'en' : 'ua';
-            const btn = document.querySelector('.lang-switch');
-            btn.textContent = currentLang === 'ua' ? 'EN' : 'UA';
-
-            document.querySelectorAll('[data-ua]').forEach(el => {
-                const text = currentLang === 'ua' ? el.getAttribute('data-ua') : el.getAttribute('data-en');
-                if (text) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = text;
-                    } else {
-                        el.innerHTML = text;
-                    }
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+            document.querySelector('.lang-switch').textContent = currentLang === 'ua' ? 'EN' : 'UA';
+            document.querySelectorAll('[data-ua][data-en]').forEach(el => {
+                const text = el.getAttribute(`data-${currentLang}`);
+       
