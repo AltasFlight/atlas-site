@@ -971,4 +971,9 @@
             document.querySelector('.lang-switch').textContent = currentLang === 'ua' ? 'EN' : 'UA';
             document.querySelectorAll('[data-ua][data-en]').forEach(el => {
                 const text = el.getAttribute(`data-${currentLang}`);
-       
+                if (text) el.innerHTML = text;
+            });
+        }
+    </script>
+</body>
+</html>
