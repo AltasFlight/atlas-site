@@ -29,6 +29,10 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html, body {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: var(--sans);
             color: var(--text);
@@ -126,6 +130,7 @@
             background-size: 60px 60px;
         }
         .hero-inner {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
@@ -826,6 +831,7 @@
         <div class="section-inner">
             <div class="section-label" data-ua="Порівняння" data-en="Comparison">Порівняння</div>
             <div class="section-title" data-ua="Порівняння моделей" data-en="Model comparison">Порівняння моделей</div>
+            <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
             <table class="comp-table">
                 <thead>
                     <tr>
@@ -895,6 +901,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
     </section>
 
